@@ -1,22 +1,31 @@
-.page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50vh;
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
 
-}.head {
-    background: #fc0;
-    height: 100px;
-    position: relative;
-    width: 100px;
-  
+.header {
+  background-color: aquamarine;
+  height: 15vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.tittle{ 
+  color:white;
+  font-family:'Lucida Sans';
+  text-align: center;
   }
-  .face {
-    font-family: 'courier new', serif;
-    font-size: 2.5em;
-    font-weight: bold;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -60%) rotate(90deg);
+
+  .body{
+    background-color: lightgray;
+    display: flex;
+    flex-direction: row;
+    height: 85vh;
+    width: 100vw;
   }
+
+

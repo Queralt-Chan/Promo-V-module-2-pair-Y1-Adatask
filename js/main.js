@@ -12,13 +12,29 @@ const tasks = [
     },
 ];
 
-for (const itemTask of tasks) {
-tasksList.innerHTML += `<li>${itemTask.name}</li>`;
-const checkbox = `<input type="checkbox" ${itemTask.completed ? 'checked' : ''}>`;
-tasksList.innerHTML += `<li>${checkbox} ${itemTask.name}</li>`;
-}
 
-//Cómo poner el checkbox dentro del HTML
-// const checkbox = document.createElement("input");
-// checkbox.type = "checkbox";
+for (const task of tasks) {
+  let checkbox = '<input= type="checkbox" class= "list">';
+  if (task.completed) {
+      checkbox = '<input= type="checkbox" checked>';
+  }
+  tasksList.innerHTML += `<li>${checkbox}${task.name}</li>`;
+  const inputs = document.querySelectorAll ('.list');
+  for (const input of inputs) {
+    input.addEventListener ('click', handleClick);
+    console.log ('click');
+
+  }
+  function handleClick (){
+    if (tasks.completed === true) {
+      tasks.completed === false;
+      checkbox.classList.add ('tachado') 
+    }
+    else {
+      tasks.completed === true;
+      checkbox.classList.remove ('tachado') 
+      
+    }
+  }
+}
 

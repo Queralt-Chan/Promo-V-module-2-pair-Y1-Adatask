@@ -13,9 +13,12 @@ const tasks = [
 ];
 
 for (const itemTask of tasks) {
-    tasksList.innerHTML += `<li>${itemTask.name}</li>`;
+tasksList.innerHTML += `<li>${itemTask.name}</li>`;
+const checkbox = `<input type="checkbox" ${itemTask.completed ? 'checked' : ''}>`;
+tasksList.innerHTML += `<li>${checkbox} ${itemTask.name}</li>`;
 }
 
 //Cómo poner el checkbox dentro del HTML
 // const checkbox = document.createElement("input");
 // checkbox.type = "checkbox";
+

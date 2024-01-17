@@ -23,17 +23,18 @@ fetch(serverUrl)
 .then ((data) => {
   console.log(data);
   tasks=data.results;
+  console.log(tasks);
   renderTasks(tasks);
 });
 }
 getDataApi ();
 
-const renderMessage () => {
-  const filterDataTrue = tasks.filter((results) => results.completed)
-  if (filterDataTrue){
-    message.innerHTML=`Tienes ${}`
-  }
-}
+// const renderMessage () => {
+//   const filterDataTrue = tasks.filter((results) => results.completed)
+//   if (filterDataTrue){
+//     message.innerHTML=`Tienes ${}`
+//   }
+// }
 
 //renderTasks(tasks);
 //Completa el código;
@@ -47,7 +48,6 @@ function handleFilter(event) {
   renderTasks(arrayFilter);
 }
 btnFilter.addEventListener('click', handleFilter);
-
 const listenCheck = () => {
   const allCheckbox = document.querySelectorAll('.js-check');
   for (const check of allCheckbox) {
@@ -82,41 +82,6 @@ function handleCheck(event) {
   console.log(id);
   tasks[id].completed = !tasks[id].completed;
   console.log(tasks);
-<<<<<<< HEAD
-  renderTasks();
-}
-
-for(const check of allCheckbox) {
-  check.addEventListener('change', handleCheck);
-}
-
-// for (const task of tasks) {
-//   let checkbox = '<input= type="checkbox" class= "list">';
-//   if (task.completed) {
-//       checkbox = '<input= type="checkbox" checked>';
-//   }
-//   tasksList.innerHTML += `<li>${checkbox}${task.name}</li>`;
-//   const inputs = document.querySelectorAll ('.list');
-//   for (const input of inputs) {
-//     input.addEventListener ('click', handleClick);
-//     console.log ('click');
-
-//   }
-//   function handleClick (){
-//     if (tasks.completed === true) {
-//       tasks.completed === false;
-//       checkbox.classList.add ('tachado') 
-//     }
-//     else {
-//       tasks.completed === true;
-//       checkbox.classList.remove ('tachado') 
-      
-//     }
-//   }
-// }
-
-
-=======
   renderTasks(tasks);
 }
 renderTasks(tasks);
@@ -126,4 +91,3 @@ escuchar eventos
 una vez escuchas cambias los datos basado en el evento
 volver a pintar, volver a escuchar
 */
->>>>>>> f9303ec78a0c4f466d5ba875b2cdc83a7b0e37c6

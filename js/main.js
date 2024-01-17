@@ -16,6 +16,9 @@ const inputFilter = document.querySelector('.js-text-task-filter');
 const githubUser = '<tu_usuario_de_github_aqui>';
 const serverUrl = `https://dev.adalab.es/api/todo/`;
 const message=document.querySelector('.message');
+const textNewTask = document.querySelector('.js-text-task-add');
+const btnAdd = document.querySelector('.js-btn-add');
+
 
 function getDataApi (){
 fetch(serverUrl)
@@ -30,7 +33,8 @@ fetch(serverUrl)
 getDataApi ();
 
 // const renderMessage () => {
-//   const filterDataTrue = tasks.filter((results) => results.completed)
+//   const filterDataTrue = tasks.filter((results) => results.completed);
+//   console.log(filterDataTrue);
 //   if (filterDataTrue){
 //     message.innerHTML=`Tienes ${}`
 //   }
@@ -85,9 +89,34 @@ function handleCheck(event) {
   renderTasks(tasks);
 }
 renderTasks(tasks);
-/*
-pintar elementos en html
-escuchar eventos 
-una vez escuchas cambias los datos basado en el evento
-volver a pintar, volver a escuchar
-*/
+
+function postNewData (event) {
+  event.preventDefault();
+  const newTaskData = textNewTask.value;
+  const newTaskDataObject = {id: 16576927301334329, name: newTaskData, completed: false};
+  tasks.push(newTaskDataObject);
+  renderTasks(tasks);
+}
+
+btnAdd.addEventListener('click', postNewData);
+
+  // // fetch(serverUrl/* {
+  // //   method: 'POST',
+  // //   headers: {'Content-Type': 'application/json'},
+  // //   body: JSON.stringify(newTaskDataObject),
+  // // }*/)
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     if (data.success) {
+  //       tasks.push(newTaskDataObject);
+  //       localStorage.setItem('newTaskAdded', newTaskDataObject);
+  //       renderTasks(tasks);
+
+  //       //Completa y/o modifica el código:
+  //       //Agrega la nueva tarea al listado
+  //       //Guarda el listado actualizado en el local storage
+  //       //Visualiza nuevamente el listado de tareas
+  //       //Limpia los valores de cada input ????
+  //       //muestra un mensaje de error.
+  //     }
+  //   });
